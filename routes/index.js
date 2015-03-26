@@ -26,11 +26,12 @@ router.post('/payload', function (req, res) {
             text: JSON.stringify(req.body)
         };
 
-    mailer.sendMail(email, function (err, res) {
+    mailer.sendMail(email, function (err, info) {
         if (err) {
             console.log(err);
         }
-        res.end('success');
+        console.log(info);
+        res.end('');
     })
 });
 
