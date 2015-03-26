@@ -18,6 +18,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/payload', function (req, res) {
+    console.log('Headers', req.headers);
     var eventType = req.headers['X-GitHub-Event']
         , email = {
             to: process.env.EMAIL_TO,
