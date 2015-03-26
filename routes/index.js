@@ -26,8 +26,8 @@ router.post('/payload', function (req, res) {
         };
 
     mailer.sendMail(email, function (err, res) {
-        if (err) { 
-            console.log(err) 
+        if (err) {
+            console.log(err);
         }
         res.end('success');
     })
