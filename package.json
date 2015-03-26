@@ -1,0 +1,37 @@
+{
+    "name": "payload-interceptor",
+    "version": "1.0.0",
+    "description": "Simple app to intercept GitHub payload data and send it to email",
+    "scripts": {
+        "start": "node ./bin/www",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/pybreed/payload-interceptor.git"
+    },
+    "dependencies": {
+        "body-parser": "~1.12.0",
+        "cookie-parser": "~1.3.4",
+        "debug": "~2.1.1",
+        "ejs": "~2.3.1",
+        "express": "~4.12.2",
+        "morgan": "~1.5.1",
+        "serve-favicon": "~2.2.0"
+    },
+    "keywords": [
+        "github",
+        "payload",
+        "webooks",
+        "email"
+    ],
+    "author": "Alexey Kucherenko <alexei.kucherenko@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/pybreed/payload-interceptor/issues"
+    },
+    "homepage": "https://github.com/pybreed/payload-interceptor",
+    "dependencies": {
+        "express": "^4.12.3"
+    }
+}
