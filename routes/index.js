@@ -1,8 +1,8 @@
 var express = require('express')
     , router = express.Router()
     , nodemailer = require('nodemailer')
-    , sgTransport = require('nodemailer-sendgrid-transport'),
-    options = {
+    , sgTransport = require('nodemailer-sendgrid-transport')
+    , options = {
         auth: {
             api_user: process.env.SENDGRID_USERNAME,
             api_key: process.env.SENDGRID_PASSWORD
@@ -18,7 +18,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/payload', function (req, res) {
-    var eventType = req.headers['X-GitHub-Event'],
+    var eventType = req.headers['X-GitHub-Event']
         , email = {
             to: process.env.EMAIL_TO,
             from: 'noreply@github-payload-interceptor.herokuapp.com',
