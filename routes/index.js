@@ -7,7 +7,8 @@ var express = require('express')
             api_user: process.env.SENDGRID_USERNAME,
             api_key: process.env.SENDGRID_PASSWORD
         }
-    };
+    }
+    , mailer = nodemailer.createTransport(sgTransport(options));
 
 
 router.get('/', function (req, res) {
@@ -17,11 +18,11 @@ router.get('/', function (req, res) {
 });
 
 router.post('/payload', function (req, res) {
-    var mailer = nodemailer.createTransport(sgTransport(options))
+    var eventType = req.headers['X-GitHub-Event'],
         , email = {
             to: process.env.EMAIL_TO,
             from: 'noreply@github-payload-interceptor.herokuapp.com',
-            subject: 'Payload sample',
+            subject: eventType + ' payload sample',
             text: JSON.stringify(req.body)
         };
 
