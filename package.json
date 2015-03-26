@@ -30,8 +30,6 @@
     "bugs": {
         "url": "https://github.com/pybreed/payload-interceptor/issues"
     },
-    "homepage": "https://github.com/pybreed/payload-interceptor",
-    "dependencies": {
-        "express": "^4.12.3"
-    }
+    "homepage": "https://github.com/pybreed/payload-interceptor"
 }
+
