@@ -18,8 +18,7 @@ router.get('/', function (req, res) {
 });
 
 router.post('/payload', function (req, res) {
-    console.log('Headers', req.headers);
-    var eventType = req.headers['X-GitHub-Event']
+    var eventType = req.headers['x-github-event']
         , email = {
             to: process.env.EMAIL_TO,
             from: 'noreply@github-payload-interceptor.herokuapp.com',
@@ -31,8 +30,9 @@ router.post('/payload', function (req, res) {
         if (err) {
             console.log(err);
         }
+
         console.log(info);
-        res.end('');
+        res.end(JSON.stringify(info));
     })
 });
 
